@@ -6,8 +6,8 @@ each local governments' website? Open data API somewhere?
 
 [[https://data.gov.tw/datasets/search?p=1&size=10&s=_score_desc&rft=避難所]]
 
-Possibly: https://data.gov.tw/dataset/73242
-Possibly: https://data.gov.tw/dataset/12849
+- Nationwide 1: [[https://data.gov.tw/dataset/73242][避難收容處所點位檔]]
+- Nationwide 2: [[https://data.gov.tw/dataset/12849][避難收容處所開設情形]]
 
 ** [24/24]
 - [X] 花蓮縣 - https://data.gov.tw/dataset/159491

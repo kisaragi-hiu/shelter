@@ -1,9 +1,12 @@
 {
-    "name": "shelter",
-    "private": true,
-    "version": "0.0.1",
-    "author": "Kisaragi Hiu <mail@kisaragi-hiu.com>",
-    "license": "AGPL-3.0-only",
-    "main": "app/main.js",
-    "workspaces": ["data", "packages/*"]
+  "name": "shelter",
+  "private": true,
+  "version": "0.0.1",
+  "author": "Kisaragi Hiu <mail@kisaragi-hiu.com>",
+  "license": "AGPL-3.0-only",
+  "main": "app/main.js",
+  "workspaces": ["data", "packages/*"],
+  "dependencies": {
+    "csv": "^6.3.8"
+  }
 }
