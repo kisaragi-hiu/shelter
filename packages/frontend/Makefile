@@ -4,10 +4,10 @@
 data: ../../data/normalized.json
 
 dev: data
-	bunx astro dev
+	bun x astro dev
 
 # build:
-# 	bunx astro check && bunx astro build
+# 	bun x astro check && bun x astro build
 
 build: data
-	bunx astro build
+	bun x astro build
