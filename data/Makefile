@@ -1,5 +1,7 @@
 .ONESHELL:
 
+.DEFAULT_GOAL := normalized.json
+
 wget := wget --quiet --show-progress --continue
 
 DATA := 73242-避難收容處所點位檔.csv 12849-避難收容處所開設情形.xml
