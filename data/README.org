@@ -1,5 +1,12 @@
 #+title: Data
 
+* License
+
+I'm shipping the data as a copy right now because
+
+- I need LibreOffice to do conversion for some files
+- And fetching files at build time means we're subject to source server availability at build time
+
 * Data sources
 
 each local governments' website? Open data API somewhere?
