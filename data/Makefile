@@ -20,3 +20,6 @@ data: $(DATA)
 
 86415-高雄市-因應各項災害避難收容場所一覽表.json:
 	$(wget) -O "$@" "https://api.kcg.gov.tw/api/service/Get/76409999-d13e-4cb2-814c-61444ac45d12"
+
+normalized.json: $(DATA) normalize.ts
+	bun normalize.ts
