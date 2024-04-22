@@ -1,8 +1,19 @@
 {
-    "name": "frontend",
-    "private": true,
-    "author": "Kisaragi Hiu <mail@kisaragi-hiu.com>",
-    "license": "AGPL-3.0-only",
-    "dependencies": {},
-    "devDependencies": {}
+  "name": "",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/svelte": "^5.4.0",
+    "astro": "^4.6.3",
+    "svelte": "^4.2.15",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@unocss/reset": "^0.59.4",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-svelte": "^3.2.3",
+    "unocss": "^0.59.4"
+  }
 }

@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ShelterList from "../components/ShelterList.svelte";
+
+import data from "../../../../data/normalized.json";
+---
+
+<Layout title="">
+	<ShelterList {data} client:load />
+</Layout>
