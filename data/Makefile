@@ -4,8 +4,8 @@
 
 wget := wget --quiet --show-progress --continue
 
-DATA := 73242-避難收容處所點位檔.csv 12849-避難收容處所開設情形.xml
-DATA += 159491-花蓮縣-避難收容所位置及收容人數.csv
+# DATA := 73242-避難收容處所點位檔.csv 12849-避難收容處所開設情形.xml
+DATA := 159491-花蓮縣-避難收容所位置及收容人數.csv
 DATA += 86415-高雄市-因應各項災害避難收容場所一覽表.json
 
 data: $(DATA)
