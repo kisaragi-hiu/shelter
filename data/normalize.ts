@@ -103,6 +103,8 @@ async function insertHualien159491(path: string) {
             continue;
         }
         shelters.push({
+            // This function is specific to this dataset so we can hardcode it here.
+            縣市: "花蓮縣",
             彙整機關: value.資源彙整機關,
             收容所編號: value.收容所編號,
             名稱: value.收容所名稱,
@@ -111,6 +113,8 @@ async function insertHualien159491(path: string) {
             管理人: value.管理人,
             聯絡電話: joinValues(value.連絡電話),
             收容人數: 剖析收容人數(value.收容人數),
+            備註: value.備註,
+            最後更新時間: value.最後更新時間,
         });
     }
 }
