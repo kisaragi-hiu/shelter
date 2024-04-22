@@ -1,0 +1,8 @@
+{
+    "name": "frontend",
+    "private": true,
+    "author": "Kisaragi Hiu <mail@kisaragi-hiu.com>",
+    "license": "AGPL-3.0-only",
+    "dependencies": {},
+    "devDependencies": {}
+}

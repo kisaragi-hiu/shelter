@@ -1,0 +1,3 @@
+#+title: Repository structure
+
+Traditional npm monorepo (not pnpm-style monorepo), but using Bun instead of Npm.
