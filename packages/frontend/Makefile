@@ -1,7 +1,5 @@
-../../data/normalized.json:
-	cd ../../data && $(MAKE) normalized.json
-
-data: ../../data/normalized.json
+data:
+	cd ../../data && $(MAKE) data
 
 dev: data
 	bun x astro dev

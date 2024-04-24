@@ -27,3 +27,6 @@ normalized.json: $(RAW) normalize.ts
 
 .PHONY: raw
 raw: $(RAW)
+
+.PHONY: data
+data: normalized.json
