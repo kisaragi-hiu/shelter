@@ -1,18 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ShelterList from "../components/ShelterList.svelte";
+import Out from "../components/Out.svelte";
 
 import data from "../../../../data/normalized.json";
 ---
 
-<Layout title="">
+<Layout title="臺灣避難所列表（尚不完全）">
 	<div class="flex flex-col h-full">
 		<div class="text-base prose prose-truegray">
 			<p>資料尚未收集完全，我只先弄出自己能用的程度</p>
 			<p>
-				原始碼：<a href="https://github.com/kisaragi-hiu/shelter"
-					>https://github.com/kisaragi-hiu/shelter</a
-				> (AGPL)
+				原始碼：<Out href="https://github.com/kisaragi-hiu/shelter" /> (AGPL)
 			</p>
 		</div>
 		<div class="grow">

@@ -20,7 +20,7 @@ export interface Shelter {
      */
     地址: string;
     郵遞區號?: string;
-    收容人數: number | undefined;
+    收容人數?: number;
     適用災害?: Disaster[];
     序號?: number;
     shelterCode?: string;

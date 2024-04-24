@@ -54,6 +54,14 @@ const sampleNational73242 = {
     室外: "否",
     適合避難弱者安置: "是",
 };
+const sampleTaoyuan32259 = {
+    災民收容所名稱: "汴洲老人活動中心",
+    管理人電話: "3469051",
+    收容所縣市: "桃園市",
+    收容所鄉鎮: "桃園區",
+    收容所地址: "桃園區莊敬路1段71號",
+};
 export type rawKaohsiung86415 = typeof sampleKaohsiung86415;
 export type rawHualien159491 = typeof sampleHualien159491;
 export type rawNational73242 = typeof sampleNational73242;
+export type rawTaoyuan32259 = typeof sampleTaoyuan32259;

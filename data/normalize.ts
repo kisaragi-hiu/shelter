@@ -3,6 +3,7 @@ import type {
     rawHualien159491,
     rawKaohsiung86415,
     rawNational73242,
+    rawTaoyuan32259,
 } from "../rawtypes.ts";
 import type { Options as CSVParseOptions } from "csv-parse";
 
@@ -137,6 +138,22 @@ async function main() {
             },
         ),
         convertHualien159491,
+    );
+    await insertData(
+        csvStream<rawTaoyuan32259>("raw/32259-桃園市-桃園市避難收容所.csv", {
+            columns: true,
+            bom: true,
+        }),
+        (value) => {
+            // There are a few invalid entries; ignore them
+            if (value.災民收容所名稱 === "") return;
+            const address = "桃園市" + value.收容所地址;
+            return shelter({
+                name: value.災民收容所名稱,
+                地址: address.replaceAll(" ", ""),
+                source: 32259,
+            });
+        },
     );
     await insertData(
         csvStream<rawNational73242>("raw/73242-避難收容處所點位檔.csv", {
