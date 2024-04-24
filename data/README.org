@@ -24,7 +24,7 @@ each local governments' website? Open data API somewhere?
 [[https://data.gov.tw/datasets/search?p=1&size=10&s=_score_desc&rft=避難所]]
 
 
-** [3/27]
+** [4/27]
 - [X] 高雄市 1 - https://data.gov.tw/dataset/86415
 - [X] Nationwide 1: [[https://data.gov.tw/dataset/73242][避難收容處所點位檔]]
 - [X] 花蓮縣 - https://data.gov.tw/dataset/159491
@@ -33,7 +33,7 @@ each local governments' website? Open data API somewhere?
 - [ ] 臺東縣 - [[https://data.gov.tw/dataset/165374][防空]], [[https://data.gov.tw/dataset/165540][2020 避難]], [[https://www.ttfd.gov.tw/index.php?Act=90&MK=99&PK=101&L=][Google Maps]], [[https://www.ttfd.gov.tw/index.php?Act=90&MK=102&PK=103&L=][疏散地圖]]
 - [ ] 臺北市 - [[https://data.gov.tw/dataset/157479][防空]], [[https://data.gov.tw/dataset/134683][避難]]
 - [ ] 新北市 - https://data.gov.tw/dataset/125800
-- [ ] 桃園市 - https://data.gov.tw/dataset/32259
+- [X] 桃園市 - https://data.gov.tw/dataset/32259
 - [ ] 臺中市 - https://data.gov.tw/dataset/83894, [[https://data.gov.tw/dataset/165255][疏散地圖]]
 - [ ] 臺南市 - [[https://data.gov.tw/dataset/53561]], [[https://data.gov.tw/dataset/79597]], https://data.gov.tw/dataset/103754, https://data.gov.tw/dataset/79982
 - [ ] 宜蘭縣 - https://data.gov.tw/dataset/112376
