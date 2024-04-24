@@ -9,6 +9,7 @@
         "resolveJsonModule": true,
         "moduleDetection": "force",
         "isolatedModules": true,
-        "strict": true
+        "strict": true,
+        "allowImportingTsExtensions": true
     }
 }
