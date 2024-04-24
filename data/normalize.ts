@@ -17,6 +17,7 @@ import {
     剖析收容人數,
 } from "./util.ts";
 
+const minify = !!process.argv[2];
 let shelters: Shelter[] = [];
 
 /** Wrapper function to get types on `v`. */
@@ -151,7 +152,10 @@ async function main() {
         return 0;
     });
 
-    await writeFile("normalized.json", JSON.stringify(shelters, null, 2));
+    await writeFile(
+        "normalized.json",
+        JSON.stringify(shelters, null, minify ? 0 : 2),
+    );
 }
 
 main();
