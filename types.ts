@@ -10,6 +10,8 @@ export type Disaster =
 
 // The goal is to parse each source file and fit the data into this structure.
 export interface Shelter {
+    /** 來源資料集 */
+    source: number;
     名稱: string;
     縣市: string;
     鄉鎮市區村里: string;

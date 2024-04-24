@@ -7,6 +7,7 @@ import { joinValues, 剖析收容人數, 剖析適用災害 } from "./util";
 const shelters: Shelter[] = [];
 
 async function insertKaohsiung86415(path: string) {
+    const source = 86415;
     const sample = {
         seq: 2,
         項次: "2",
@@ -53,6 +54,7 @@ async function insertKaohsiung86415(path: string) {
         }
         const 鄉鎮市區村里 = value.收容所鄉鎮 + value.收容所村里;
         shelters.push({
+            source,
             收容所編號: value.避難收容處所編號,
             名稱: value.避難收容處所名稱,
             縣市: value.收容所縣市,
@@ -75,6 +77,7 @@ async function insertKaohsiung86415(path: string) {
 }
 
 async function insertHualien159491(path: string) {
+    const source = 159491;
     const file = await open(path);
     const parser = file
         .createReadStream()
@@ -103,6 +106,7 @@ async function insertHualien159491(path: string) {
             continue;
         }
         shelters.push({
+            source,
             // This function is specific to this dataset so we can hardcode it here.
             縣市: "花蓮縣",
             彙整機關: value.資源彙整機關,
