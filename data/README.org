@@ -23,31 +23,32 @@ each local governments' website? Open data API somewhere?
 
 [[https://data.gov.tw/datasets/search?p=1&size=10&s=_score_desc&rft=避難所]]
 
-- Nationwide 1: [[https://data.gov.tw/dataset/73242][避難收容處所點位檔]]
-- Nationwide 2: [[https://data.gov.tw/dataset/12849][避難收容處所開設情形]]
 
-** [24/24]
+** [3/27]
+- [X] 高雄市 1 - https://data.gov.tw/dataset/86415
+- [X] Nationwide 1: [[https://data.gov.tw/dataset/73242][避難收容處所點位檔]]
 - [X] 花蓮縣 - https://data.gov.tw/dataset/159491
-- [X] 臺東縣 - [[https://data.gov.tw/dataset/165374][防空]], [[https://data.gov.tw/dataset/165540][2020 避難]], [[https://www.ttfd.gov.tw/index.php?Act=90&MK=99&PK=101&L=][Google Maps]], [[https://www.ttfd.gov.tw/index.php?Act=90&MK=102&PK=103&L=][疏散地圖]]
-- [X] 臺北市 - [[https://data.gov.tw/dataset/157479][防空]], [[https://data.gov.tw/dataset/134683][避難]]
-- [X] 新北市 - https://data.gov.tw/dataset/125800
-- [X] 桃園市 - https://data.gov.tw/dataset/32259
-- [X] 臺中市 - https://data.gov.tw/dataset/83894, [[https://data.gov.tw/dataset/165255][疏散地圖]]
-- [X] 臺南市 - [[https://data.gov.tw/dataset/53561]], [[https://data.gov.tw/dataset/79597]], https://data.gov.tw/dataset/103754, https://data.gov.tw/dataset/79982
-- [X] 高雄市 - [[https://data.gov.tw/dataset/86415][全市]], [[https://data.gov.tw/dataset/128142][全市(2)]]
-- [X] 宜蘭縣 - https://data.gov.tw/dataset/112376
-- [X] 新竹縣 - https://data.gov.tw/dataset/109355
-- [X] 彰化縣 - https://data.gov.tw/dataset/95180
-- [X] 南投縣 - https://data.gov.tw/dataset/94902
-- [X] 雲林縣 - https://data.gov.tw/dataset/97431
-- [X] 嘉義縣 - https://data.gov.tw/dataset/90375
-- [X] 屏東縣 - [[https://data.gov.tw/dataset/134979][避難收容處所]]
-- [X] 澎湖縣 - [[https://data.gov.tw/dataset/113387][西嶼鄉]], [[https://data.gov.tw/dataset/113385][湖西鄉]], [[https://data.gov.tw/dataset/113388][望安鄉]], [[https://data.gov.tw/dataset/113384][馬公市]], [[https://data.gov.tw/dataset/113079][馬公市(2)]], [[https://data.gov.tw/dataset/113386][白沙鄉]], [[https://data.gov.tw/dataset/113389][七美鄉]]
-- [X] 澎湖縣(海嘯) - [[https://data.gov.tw/dataset/113394][西嶼鄉]], [[https://data.gov.tw/dataset/113391][湖西鄉]], [[https://data.gov.tw/dataset/113393][望安鄉]], [[https://data.gov.tw/dataset/113390][馬公市]], [[https://data.gov.tw/dataset/113392][白沙鄉]], [[https://data.gov.tw/dataset/113395][七美鄉]]
-- [X] 新竹市 - https://data.gov.tw/dataset/67738
-- [X] 嘉義市 - https://data.gov.tw/dataset/52336
-- [X] 連江縣(馬祖) - https://data.gov.tw/dataset/165824, [[https://data.gov.tw/dataset/165823][防災公園]]
-- [X] 金門縣 - https://data.gov.tw/dataset/109781
-- [X] 其他 - [[https://data.gov.tw/dataset/102434][核電廠緊急應變計畫區]]
-- [X] 苗栗縣 - [[https://data.gov.tw/dataset/151820][防空]], [[https://www.mlfd.gov.tw/News.aspx?n=8760&sms=14252][避難地圖(PDFs)]]
-- [X] 基隆市 - [[https://data.gov.tw/dataset/167234][防空]], [[https://www.klfd.klcg.gov.tw/tw/klfd1/2107-106563.html][避難圖(PDFs)]]
+- [ ] 高雄市 2 - https://data.gov.tw/dataset/128142
+- [ ] Nationwide 2: [[https://data.gov.tw/dataset/12849][避難收容處所開設情形]]
+- [ ] 臺東縣 - [[https://data.gov.tw/dataset/165374][防空]], [[https://data.gov.tw/dataset/165540][2020 避難]], [[https://www.ttfd.gov.tw/index.php?Act=90&MK=99&PK=101&L=][Google Maps]], [[https://www.ttfd.gov.tw/index.php?Act=90&MK=102&PK=103&L=][疏散地圖]]
+- [ ] 臺北市 - [[https://data.gov.tw/dataset/157479][防空]], [[https://data.gov.tw/dataset/134683][避難]]
+- [ ] 新北市 - https://data.gov.tw/dataset/125800
+- [ ] 桃園市 - https://data.gov.tw/dataset/32259
+- [ ] 臺中市 - https://data.gov.tw/dataset/83894, [[https://data.gov.tw/dataset/165255][疏散地圖]]
+- [ ] 臺南市 - [[https://data.gov.tw/dataset/53561]], [[https://data.gov.tw/dataset/79597]], https://data.gov.tw/dataset/103754, https://data.gov.tw/dataset/79982
+- [ ] 宜蘭縣 - https://data.gov.tw/dataset/112376
+- [ ] 新竹縣 - https://data.gov.tw/dataset/109355
+- [ ] 彰化縣 - https://data.gov.tw/dataset/95180
+- [ ] 南投縣 - https://data.gov.tw/dataset/94902
+- [ ] 雲林縣 - https://data.gov.tw/dataset/97431
+- [ ] 嘉義縣 - https://data.gov.tw/dataset/90375
+- [ ] 屏東縣 - [[https://data.gov.tw/dataset/134979][避難收容處所]]
+- [ ] 澎湖縣 - [[https://data.gov.tw/dataset/113387][西嶼鄉]], [[https://data.gov.tw/dataset/113385][湖西鄉]], [[https://data.gov.tw/dataset/113388][望安鄉]], [[https://data.gov.tw/dataset/113384][馬公市]], [[https://data.gov.tw/dataset/113079][馬公市(2)]], [[https://data.gov.tw/dataset/113386][白沙鄉]], [[https://data.gov.tw/dataset/113389][七美鄉]]
+- [ ] 澎湖縣(海嘯) - [[https://data.gov.tw/dataset/113394][西嶼鄉]], [[https://data.gov.tw/dataset/113391][湖西鄉]], [[https://data.gov.tw/dataset/113393][望安鄉]], [[https://data.gov.tw/dataset/113390][馬公市]], [[https://data.gov.tw/dataset/113392][白沙鄉]], [[https://data.gov.tw/dataset/113395][七美鄉]]
+- [ ] 新竹市 - https://data.gov.tw/dataset/67738
+- [ ] 嘉義市 - https://data.gov.tw/dataset/52336
+- [ ] 連江縣(馬祖) - https://data.gov.tw/dataset/165824, [[https://data.gov.tw/dataset/165823][防災公園]]
+- [ ] 金門縣 - https://data.gov.tw/dataset/109781
+- [ ] 其他 - [[https://data.gov.tw/dataset/102434][核電廠緊急應變計畫區]]
+- [ ] 苗栗縣 - [[https://data.gov.tw/dataset/151820][防空]], [[https://www.mlfd.gov.tw/News.aspx?n=8760&sms=14252][避難地圖(PDFs)]]
+- [ ] 基隆市 - [[https://data.gov.tw/dataset/167234][防空]], [[https://www.klfd.klcg.gov.tw/tw/klfd1/2107-106563.html][避難圖(PDFs)]]

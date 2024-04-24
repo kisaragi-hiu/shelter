@@ -24,8 +24,6 @@ export interface Shelter {
     適用災害?: Disaster[];
     序號?: number;
     shelterCode?: string;
-    sheltedId?: number;
-    收容所編號?: string;
     彙整機關?: string;
     備註?: string;
     最後更新時間?: string;

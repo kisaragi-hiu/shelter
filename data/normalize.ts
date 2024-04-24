@@ -62,7 +62,7 @@ function convertKaohsiung86415(value: rawKaohsiung86415) {
         value.收容所地址;
     return shelter({
         source,
-        收容所編號: value.避難收容處所編號,
+        shelterCode: value.避難收容處所編號,
         name: value.避難收容處所名稱,
         郵遞區號: value.郵遞區號,
         地址: address.replaceAll(" ", ""),
@@ -84,7 +84,7 @@ function convertHualien159491(value: rawHualien159491) {
     return shelter({
         source,
         彙整機關: value.資源彙整機關,
-        收容所編號: value.收容所編號,
+        shelterCode: value.收容所編號,
         name: value.收容所名稱,
         地址: value.地址,
         管理人: value.管理人,
