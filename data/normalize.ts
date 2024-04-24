@@ -1,9 +1,9 @@
 import type { Shelter } from "../types";
+import type { rawHualien159491, rawKaohsiung86415 } from "../rawtypes.ts";
 
-import { readFile, writeFile, open } from "fs/promises";
+import { readFile, writeFile, open } from "node:fs/promises";
 import { parse } from "csv-parse";
-import { joinValues, 剖析收容人數, 剖析適用災害 } from "./util";
-import { rawHualien159491, rawKaohsiung86415 } from "../rawtypes";
+import { joinValues, 剖析收容人數, 剖析適用災害 } from "./util.ts";
 
 const shelters: Shelter[] = [];
 

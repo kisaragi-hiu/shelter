@@ -28,7 +28,7 @@ export function 剖析收容人數(orig: string | undefined) {
 export function 剖析適用災害(orig: string) {
     const disasters: Disaster[] = [];
     let note: string | undefined;
-    const keyMap: Map<string, Disaster[]> = new Map(
+    const map: Map<string, Disaster[]> = new Map(
         Object.entries({
             "■風水災": ["風災", "水災"],
             "■地震": ["地震"],
@@ -36,18 +36,19 @@ export function 剖析適用災害(orig: string) {
             "■其他": ["其他"],
         }),
     );
+    const keysRegexp = /[■□](風水災|地震|海嘯|其他)/g;
     for (const line of orig.split("\n")) {
-        for (const [key, values] of keyMap) {
+        for (const [key, values] of map) {
             // Do the test
             if (line.startsWith(key)) {
                 for (const value of values) disasters.push(value);
-            }
-            // Cut out the key
-            line.replace(key, "");
-            // If there's still stuff remaining, then the it should be
-            // considered a note.
-            if (line.length > 0) {
-                note = line;
+                const remaining = line.replace(keysRegexp, "");
+                // Cut out the key
+                // If there's still stuff remaining, then the it should be
+                // considered a note.
+                if (remaining.length > 0) {
+                    note = (note || "") + remaining;
+                }
             }
         }
     }
