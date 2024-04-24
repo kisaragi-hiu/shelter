@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Shelter } from "../../../../types.ts";
-  import ShelterCard from "../components/ShelterCard.svelte";
+  import ShelterCard from "@components/ShelterCard.svelte";
   import VirtualList from "svelte-tiny-virtual-list";
   export let data: Shelter[];
   let value: string;
