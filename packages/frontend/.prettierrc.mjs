@@ -1,6 +1,7 @@
 /** @type {import("prettier").Config} */
 export default {
   astroAllowShorthand: true,
+  quoteProps: "consistent",
   plugins: ["prettier-plugin-astro", "prettier-plugin-svelte"],
   overrides: [
     {
