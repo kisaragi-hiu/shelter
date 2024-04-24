@@ -9,9 +9,15 @@ import type { Options as CSVParseOptions } from "csv-parse";
 import { readFile, writeFile } from "node:fs/promises";
 import { createReadStream } from "node:fs";
 import { parse } from "csv-parse";
-import { joinValues, parseBool, 剖析收容人數, 剖析適用災害 } from "./util.ts";
+import {
+    joinValues,
+    parseApplicable73242,
+    parseApplicable86415,
+    parseBool,
+    剖析收容人數,
+} from "./util.ts";
 
-const shelters: Shelter[] = [];
+let shelters: Shelter[] = [];
 
 /** Wrapper function to get types on `v`. */
 function shelter(v: Shelter): Shelter {
@@ -45,7 +51,7 @@ function convertKaohsiung86415(value: rawKaohsiung86415) {
     } else {
         預計收容村里 = value.服務里別;
     }
-    const { disasters, note } = 剖析適用災害(value.適用災害);
+    const { disasters, note } = parseApplicable86415(value.適用災害);
     if (note) {
         備註 = (備註 || "") + note;
     }
@@ -93,6 +99,7 @@ function convertNational73242(value: rawNational73242) {
     return shelter({
         source,
         name: value.避難收容處所名稱,
+        適用災害: parseApplicable73242(value.適用災害類別),
         收容人數: 剖析收容人數(value.預計收容人數),
         經度: value.經度,
         緯度: value.緯度,
@@ -136,6 +143,13 @@ async function main() {
         }),
         convertNational73242,
     );
+
+    shelters = shelters.sort((a, b) => {
+        if (a.地址 < b.地址) return -1;
+        if (a.地址 > b.地址) return 1;
+        console.warn(`${a.地址} is duplicated!`);
+        return 0;
+    });
 
     await writeFile("normalized.json", JSON.stringify(shelters, null, 2));
 }

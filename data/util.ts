@@ -33,7 +33,7 @@ export function 剖析收容人數(orig: string | undefined) {
  * Take something like "■風水災\n■地震\n■海嘯\n■其他"
  * then turn it into {disaster:["風災", "水災" ...]}
  */
-export function 剖析適用災害(orig: string) {
+export function parseApplicable86415(orig: string) {
     const disasters: Disaster[] = [];
     let note: string | undefined;
     const map: Map<string, Disaster[]> = new Map(
@@ -62,4 +62,36 @@ export function 剖析適用災害(orig: string) {
     }
 
     return { disasters, note };
+}
+
+export function parseApplicable73242(orig: string) {
+    const disasters: Disaster[] = [];
+    const map: Record<string, Disaster[] | undefined> = {
+        水災: ["水災"],
+        震災: ["地震"],
+        土石流: ["土石流"],
+        海嘯: ["海嘯"],
+        核子事故: ["核子事故"],
+        坡地災害: ["坡地災害"],
+    };
+    let beenHelpful = false;
+    for (const line of orig.split(",")) {
+        if (line === "") continue;
+        const values = map[line];
+        if (values) {
+            for (const value of values) {
+                disasters.push(value);
+            }
+        } else {
+            console.warn(`Seen unregistered disaster type: ${line}`);
+            if (!beenHelpful) {
+                console.warn(
+                    "Please add it to the definition of Disaster and/or see if it should be merged with existing disaster types.",
+                );
+                beenHelpful = true;
+            }
+        }
+    }
+
+    return disasters;
 }

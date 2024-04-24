@@ -9,6 +9,16 @@ I'm shipping the data as a copy right now because
 
 * Data sources
 
+- 86415-高雄市-因應各項災害避難收容場所一覽表
+- 159491-花蓮縣-避難收容所位置及收容人數
+- 73242-避難收容處所點位檔
+
+Raw data set up but not yet included in normalized data file:
+
+- 12849-避難收容處所開設情形
+
+* Future data sources
+
 each local governments' website? Open data API somewhere?
 
 [[https://data.gov.tw/datasets/search?p=1&size=10&s=_score_desc&rft=避難所]]
