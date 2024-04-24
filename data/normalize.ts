@@ -27,6 +27,9 @@ async function insertData<T>(
 }
 function convertKaohsiung86415(value: rawKaohsiung86415) {
     const source = 86415;
+    // There is one item that contains total stats but in the wrong fields
+    // Ignore it
+    if (value.避難收容處所名稱 === "") return;
     let 備註: string | undefined;
     let 預計收容村里: string | undefined;
     // There is one mistake where 服務里別 includes stuff that should really
