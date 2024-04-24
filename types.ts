@@ -45,3 +45,15 @@ export interface Shelter {
     室外?: boolean;
     適合避難弱者安置?: boolean;
 }
+
+export interface EvacuationMap {
+    /** 來源網址 */
+    source: string;
+    name: string;
+    縣市: string;
+    鄉鎮市區村里: string;
+    適用區域: string;
+    image: string;
+}
+
+export type Item = Shelter | EvacuationMap;

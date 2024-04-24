@@ -26,7 +26,6 @@
   />
   <div class="grow" bind:offsetHeight={listHeight}>
     <VirtualList
-      width="100%"
       height={listHeight}
       itemCount={filteredData.length}
       itemSize={170}

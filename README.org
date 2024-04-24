@@ -1,5 +1,10 @@
 * shelter
 
+** High priority
+
+- Tsunami shelter and evacuation maps for Taitung
+- and Hualien
+
 ** Prior art
 
 - [[https://www.nfa.gov.tw/cht/index.php?code=list&ids=82]]: barely usable, no search, no “locate nearest”
