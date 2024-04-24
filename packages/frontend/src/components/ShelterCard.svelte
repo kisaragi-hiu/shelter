@@ -14,6 +14,6 @@
     >
     <div>收容人數：{item.收容人數}人</div>
     <div>適用災害：{item.適用災害?.join("、")}</div>
-    <div>備註：{item.備註}</div>
+    <div>備註：{item.備註 || ""}</div>
   </h2>
 </div>
