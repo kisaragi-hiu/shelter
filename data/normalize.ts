@@ -41,6 +41,7 @@ function convertKaohsiung86415(value: rawKaohsiung86415) {
         備註 = (備註 || "") + note;
     }
     const 鄉鎮市區村里 = value.收容所鄉鎮 + value.收容所村里;
+    const address = value.收容所縣市 + 鄉鎮市區村里 + value.收容所地址;
     return shelter({
         source,
         收容所編號: value.避難收容處所編號,
@@ -48,7 +49,7 @@ function convertKaohsiung86415(value: rawKaohsiung86415) {
         縣市: value.收容所縣市,
         郵遞區號: value.郵遞區號,
         鄉鎮市區村里,
-        地址: value.收容所縣市 + 鄉鎮市區村里 + value.收容所地址,
+        地址: address.replaceAll(" ", ""),
         收容人數: Number.parseInt(value.容納人數),
         備註,
         預計收容村里,
