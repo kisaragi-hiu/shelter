@@ -90,7 +90,7 @@ async function main() {
         const path = "raw/86415-高雄市-因應各項災害避難收容場所一覽表.json";
         const fileData = await readFile(path, { encoding: "utf-8" });
         const values = JSON.parse(fileData).data as rawKaohsiung86415[];
-        insertData(values, convertKaohsiung86415);
+        await insertData(values, convertKaohsiung86415);
     }
     {
         const file = await open(
@@ -103,7 +103,7 @@ async function main() {
         // actually an async iterator, not a sync array, but type-wise they have the
         // same effect of typing value to (typeof sample).
         const values = parser as unknown as rawHualien159491[];
-        insertData(values, convertHualien159491);
+        await insertData(values, convertHualien159491);
     }
     await writeFile("normalized.json", JSON.stringify(shelters, null, 2));
 }
