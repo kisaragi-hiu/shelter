@@ -11,6 +11,13 @@ export function joinValues<T>(...values: T[]) {
     });
 }
 
+export function parseBool(orig: string) {
+    if (orig === "是") return true;
+    if (orig === "否") return false;
+    console.warn("Unexpected bool source value");
+    return false;
+}
+
 /**
  * 收容人數 might be a normal number or an empty string or even undefined.
  * Handle it correctly.
@@ -18,6 +25,7 @@ export function joinValues<T>(...values: T[]) {
 export function 剖析收容人數(orig: string | undefined) {
     // Passthrough undefined
     if (typeof orig === "undefined") return;
+    if (orig === "") return;
     return Number.parseInt(orig);
 }
 

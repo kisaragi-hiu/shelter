@@ -37,5 +37,23 @@ const sampleHualien159491 = {
     備註: "",
     最後更新時間: "20201001",
 };
+const sampleNational73242 = {
+    序號: "1",
+    縣市及鄉鎮市區: "新竹縣",
+    村里: "",
+    避難收容處所地址: "",
+    經度: "121.073",
+    緯度: "24.386",
+    避難收容處所名稱: "五峰活動中心",
+    預計收容村里: "大隘村、花園村、桃山村、竹林村",
+    預計收容人數: "110",
+    適用災害類別: "水災,震災,土石流",
+    管理人姓名: "張兒",
+    管理人電話: "03-5851001",
+    室內: "是",
+    室外: "否",
+    適合避難弱者安置: "是",
+};
 export type rawKaohsiung86415 = typeof sampleKaohsiung86415;
 export type rawHualien159491 = typeof sampleHualien159491;
+export type rawNational73242 = typeof sampleNational73242;

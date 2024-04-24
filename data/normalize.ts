@@ -1,9 +1,15 @@
 import type { Shelter } from "../types";
-import type { rawHualien159491, rawKaohsiung86415 } from "../rawtypes.ts";
+import type {
+    rawHualien159491,
+    rawKaohsiung86415,
+    rawNational73242,
+} from "../rawtypes.ts";
+import type { Options as CSVParseOptions } from "csv-parse";
 
-import { readFile, writeFile, open } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
+import { createReadStream } from "node:fs";
 import { parse } from "csv-parse";
-import { joinValues, 剖析收容人數, 剖析適用災害 } from "./util.ts";
+import { joinValues, parseBool, 剖析收容人數, 剖析適用災害 } from "./util.ts";
 
 const shelters: Shelter[] = [];
 
@@ -43,15 +49,16 @@ function convertKaohsiung86415(value: rawKaohsiung86415) {
     if (note) {
         備註 = (備註 || "") + note;
     }
-    const 鄉鎮市區村里 = value.收容所鄉鎮 + value.收容所村里;
-    const address = value.收容所縣市 + 鄉鎮市區村里 + value.收容所地址;
+    const address =
+        value.收容所縣市 +
+        value.收容所鄉鎮 +
+        value.收容所村里 +
+        value.收容所地址;
     return shelter({
         source,
         收容所編號: value.避難收容處所編號,
-        名稱: value.避難收容處所名稱,
-        縣市: value.收容所縣市,
+        name: value.避難收容處所名稱,
         郵遞區號: value.郵遞區號,
-        鄉鎮市區村里,
         地址: address.replaceAll(" ", ""),
         收容人數: Number.parseInt(value.容納人數),
         備註,
@@ -70,12 +77,9 @@ function convertHualien159491(value: rawHualien159491) {
     }
     return shelter({
         source,
-        // This function is specific to this dataset so we can hardcode it here.
-        縣市: "花蓮縣",
         彙整機關: value.資源彙整機關,
         收容所編號: value.收容所編號,
-        名稱: value.收容所名稱,
-        鄉鎮市區村里: value.收容所鄉鎮市區 + value.收容所村里,
+        name: value.收容所名稱,
         地址: value.地址,
         管理人: value.管理人,
         聯絡電話: joinValues(value.連絡電話),
@@ -83,6 +87,30 @@ function convertHualien159491(value: rawHualien159491) {
         備註: value.備註,
         最後更新時間: value.最後更新時間,
     });
+}
+function convertNational73242(value: rawNational73242) {
+    const source = 73242;
+    return shelter({
+        source,
+        name: value.避難收容處所名稱,
+        收容人數: 剖析收容人數(value.預計收容人數),
+        經度: value.經度,
+        緯度: value.緯度,
+        地址: value.縣市及鄉鎮市區 + value.村里 + value.避難收容處所地址,
+        管理人: value.管理人姓名,
+        聯絡電話: [value.管理人電話],
+        室內: parseBool(value.室內),
+        室外: parseBool(value.室外),
+        適合避難弱者安置: parseBool(value.適合避難弱者安置),
+    });
+}
+
+function csvStream<T>(path: string, csvOptions: CSVParseOptions) {
+    const parser = createReadStream(path).pipe(parse(csvOptions));
+
+    // Hack to assign a type to each value. The real value is actually a Node
+    // Stream, but marking it as an array still allows it to be used in for await.
+    return parser as unknown as T[];
 }
 
 async function main() {
@@ -92,19 +120,23 @@ async function main() {
         const values = JSON.parse(fileData).data as rawKaohsiung86415[];
         await insertData(values, convertKaohsiung86415);
     }
-    {
-        const file = await open(
+    await insertData(
+        csvStream<rawHualien159491>(
             "raw/159491-花蓮縣-避難收容所位置及收容人數.csv",
-        );
-        const parser = file
-            .createReadStream()
-            .pipe(parse({ columns: true, bom: true }));
-        // The "as..." is a hack to assign type to each value. The latter is
-        // actually an async iterator, not a sync array, but type-wise they have the
-        // same effect of typing value to (typeof sample).
-        const values = parser as unknown as rawHualien159491[];
-        await insertData(values, convertHualien159491);
-    }
+            {
+                columns: true,
+                bom: true,
+            },
+        ),
+        convertHualien159491,
+    );
+    await insertData(
+        csvStream<rawNational73242>("raw/73242-避難收容處所點位檔.csv", {
+            columns: true,
+        }),
+        convertNational73242,
+    );
+
     await writeFile("normalized.json", JSON.stringify(shelters, null, 2));
 }
 

@@ -8,7 +8,7 @@
       ? data
       : data.filter((shelter) => {
           const needle =
-            shelter.名稱 + shelter.地址 + shelter.適用災害 + shelter.備註;
+            shelter.name + shelter.地址 + shelter.適用災害 + shelter.備註;
           return needle.includes(value);
         });
   $: matchingData = filteredData.length === 0 ? data : filteredData;

@@ -22,7 +22,7 @@ raw/159491-花蓮縣-避難收容所位置及收容人數.csv:
 raw/86415-高雄市-因應各項災害避難收容場所一覽表.json:
 	$(wget) -O "$@" "https://api.kcg.gov.tw/api/service/Get/76409999-d13e-4cb2-814c-61444ac45d12"
 
-normalized.json: $(RAW) normalize.ts
+normalized.json: $(RAW) $(wildcard *.ts)
 	bun normalize.ts
 
 .PHONY: raw

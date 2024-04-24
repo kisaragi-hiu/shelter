@@ -12,9 +12,7 @@ export type Disaster =
 export interface Shelter {
     /** 來源資料集 */
     source: number;
-    名稱: string;
-    縣市: string;
-    鄉鎮市區村里: string;
+    name: string;
     /**
      * 避難所完整地址: 縣市及鄉鎮市區 + 村里 + 避難收容處所地址
      * 或者是 county + address
